@@ -6,74 +6,265 @@
 
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
-<style>
-#p3 {background-color:rgba(0,0,255,0.3);}
-</style>
-<body id="p3">
-<p id="p3">
-<form action="https://infovision3--sandboxec.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" id="p3">
-<style>
-.myDiv {
-background-color: lightblue;
-text-align: center;
-}
-
-div.absolute{
-  position: absolute;
-  top: 250px;
-  right: 100px;
-  left: 500px;
-  bottom: 100px;
-  width: 200px;
-  height: 100px;
-}
-.button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-}
-</style>
-
-<img src="InfoVision.jpg" alt="InfoVision Logo" width="100" height="100">
-<header>
-<h1>Health Cloud</h1>
-</header>
-<input type=hidden name="orgid" value="00D9D0000000SeU">
-<input type=hidden name="retURL" value="">
-
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="ashwini.kumar@infovision.com">                                   -->
-<!--  ----------------------------------------------------------------------  -->
-<div class="absolute">
-<fieldset style="background-color: blue;">
-<label for="name">Contact Name:</label><br><input id="name" maxlength="80" name="name" size="20" type="text" class="myDiv" /><br>
-
-<label for="email">Email:</label><br><input id="email" maxlength="80" name="email" size="20" type="text" class="myDiv" /><br>
-
-<label for="phone">Phone:</label><br><input id="phone" maxlength="40" name="phone" size="20" type="text" class="myDiv"/><br>
-
-<label for="subject">Subject:</label><br><input id="subject" maxlength="80" name="subject" size="20" type="text"class="myDiv" /><br>
-
-<label for="description">Description:</label><br><textarea name="description" class="myDiv"></textarea><br>
-
-<input type="hidden" id="external" name="external" value="1" /><br>
-
-<input type="submit" name="register" label="Register" class="button" value="Register">
-</fieldset>
-</div>
-
-</form>
-</body>
-</p>
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: Please add the following <FORM> element to your page.             -->
+  <!--  ----------------------------------------------------------------------  -->
+  <head>
+    <style type="text/css">
+      * {
+    box-sizing: border-box;
+  }
+  
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    color:black;
+  }
+  
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+  
+  html {
+    font-family: "Lucida Sans", sans-serif;
+  }
+  
+  .header {
+    background-color: #9933cc;
+    color: #ffffff;
+    padding: 15px;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .menu li:hover {
+    background-color: #0099cc;
+  }
+  
+  .aside {
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .footer {
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+  }
+  
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+  }
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+  }
+  
+      html, #page { padding:0; margin:0;}
+      body { margin:0; padding:0; width:100%; color:#959595; font:normal 12px/2.0em Sans-Serif;} 
+      h1, h2, h3, h4, h5, h6 {color:rgb(8, 15, 8);}
+      #page { background:#fff;}
+      #header, #footer, #top-nav, #content, #content #contentbar, #content #sidebar { margin:0; padding:0;}
+            
+      /* Logo */
+      #logo { padding:0; width:auto; float:left;}
+      #logo h1 a, h1 a:hover { color:darkgreen; text-decoration:none;}
+      #logo h1 span { color:#BCCE98;}
+  
+      /* Header */
+      #header { background:#fff; }
+      #header-inner { margin:auto; padding:0; width:1500px;}
+      
+      /* Feature */
+      .feature { background:rgb(0, 109, 128);padding:18px;}
+      .feature-inner { margin:auto;width:1500px; }
+      .feature-inner h1 {color:#0d0f0a;font-size:32px;}
+      
+      /* Menu */
+      #top-nav { margin:0 auto; padding:0px 0 0; height:37px; float:right;}
+      #top-nav ul { list-style:none; padding:0; height:37px; float:left;}
+      #top-nav ul li { margin:0; padding:0 0 0 8px; float:left;}
+      #top-nav ul li a { display:block; margin:0; padding:8px 20px; color:green; text-decoration:none;}
+      #top-nav ul li.active a, #top-nav ul li a:hover { color:#BCCE98;}
+      
+      /* Content */
+      #content-inner { margin:0 auto; padding:10px 0; width:970px;background:#fff;}
+      #content #contentbar { margin:0; padding:0; float:right; width:760px;}
+      #content #contentbar .article { margin:0 0 24px; padding:0 20px 0 15px; }
+      #content #sidebar { padding:0; float:left; width:200px;}
+      #content #sidebar .widget { margin:0 0 12px; padding:8px 8px 8px 13px;line-height:1.4em;}
+      #content #sidebar .widget h3 a { text-decoration:none;}
+      #content #sidebar .widget ul { margin:0; padding:0; list-style:none; color:#959595;}
+      #content #sidebar .widget ul li { margin:0;}
+      #content #sidebar .widget ul li { padding:4px 0; width:185px;}
+      #content #sidebar .widget ul li a { color:green; text-decoration:none; margin-left:-16px; padding:4px 8px 4px 16px;}
+      #content #sidebar .widget ul li a:hover { color:#BCCE98; font-weight:bold; text-decoration:none;}
+      
+      /* Footerblurb */
+      #footerblurb { background:#DAE9BC;color:green;}
+      #footerblurb-inner { margin:0 auto; width:922px; padding:24px;}
+      #footerblurb .column { margin:0; text-align:justify; float:left;width:250px;padding:0 24px;}
+      
+      /* Footer */
+      #footer { background:#fff;}
+      #footer-inner { margin:auto; text-align:center; padding:12px; width:922px;}
+      #footer a {color:green;text-decoration:none;}
+      
+      /* Clear both sides to assist with div alignment  */
+      .clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+    </style>
+    <style>
+      .myDiv {
+      background-color: lightblue;
+      text-align: center;
+      }
+      
+      div.absolute{
+        position: absolute;
+        top: 250px;
+        right: 100px;
+        left: 500px;
+        bottom: 100px;
+        width: 400px;
+        height: 500px;
+      }
+      .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 32px;
+        text-align: Right;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+      }
+      fieldset {
+    display: block;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 0.35em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    border: 2px groove (internal value);
+  }
+  label {
+    font-size: 20px;
+    color:rgb(4, 10, 4);
+  }
+      </style>
+  </head>
+  <body>
+  <form action="https://infovision3--sandboxec.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+  
+  
+  <!--img src="InfoVision.jpg" alt="InfoVision Logo" width="100" height="100"-->
+  <header id="header">
+    <div id="header-inner">	
+      
+      <div id="logo">
+        <h1><a href="#">InfoVision Labs<span> <img src="InfoVision.jpg" alt="Info Vision Logo" width="50" height="30"></span></a></h1>
+      </div>
+      <div id="top-nav">
+        <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+      <div class="clr"></div>
+    </div>
+  </header>
+  <div class="feature">
+    <div class="feature-inner">
+    <h1>Health Cloud Registration Form</h1>
+    </div>
+  </div>
+  <input type=hidden name="orgid" value="00D9D0000000SeU">
+  <input type=hidden name="retURL" value="">
+  <div class="row">
+    <div class="col-3 col-s-6">
+      <h1>Make the move to value-based healthcare with ease.</h1>
+      <h4>The shift from volume-based healthcare to value-based healthcare has brought the focus back on patient care. But healthcare providers (HCPs) 
+        still face an uphill task in creating value for diverse patient demographics at speed and scale.</h4>
+        <h4>We plug in intelligent insights and automation at various links of the value chain to help build 360⁰ patient profiles,
+           democratize access, enhance operational efficiency and improve all-round patient outcomes.</h4>
+      </div>
+  <!--  ----------------------------------------------------------------------  -->
+  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+  <!--  these lines if you wish to test in debug mode.                          -->
+  <!--  <input type="hidden" name="debug" value=1>                              -->
+  <!--  <input type="hidden" name="debugEmail"                                  -->
+  <!--  value="ashwini.kumar@infovision.com">                                   -->
+  <!--  ----------------------------------------------------------------------  -->
+  <div class="col-9 col-s-12">
+    <div class="absolute">
+  <fieldset>
+  <label  for="name">Contact Name:</label><br><input size="50" id="name" maxlength="80" name="name" type="text" class="myDiv" /><br>
+  
+  <label for="email">Email:</label><br><input size="50" id="email" maxlength="80" name="email"  type="text" class="myDiv" /><br>
+  
+  <label  for="phone">Phone:</label><br><input size="50" id="phone" maxlength="40" name="phone"  type="text" class="myDiv"/><br>
+  
+  <label for="subject">Subject:</label><br><input size="50"  id="subject" maxlength="80" name="subject"  type="text"class="myDiv" /><br>
+  
+  <label for="description">Description:</label><br><textarea name="description" class="myDiv"></textarea><br>
+  
+  <input type="hidden" id="external" name="external" value="1" /><br>
+  
+  <input type="submit" name="register" label="Register" class="button" value="Register">
+  </fieldset>
+  </div>
+  </div>
+  </div>
+  </form>
+  </body>
