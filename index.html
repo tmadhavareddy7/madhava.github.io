@@ -37,6 +37,33 @@
     padding: 15px;
   }
   
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .menu li:hover {
+    background-color: #0099cc;
+  }
+  
+  .aside {
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
   .footer {
     background-color: #0099cc;
     color: #ffffff;
@@ -133,6 +160,8 @@
       
       /* Clear both sides to assist with div alignment  */
       .clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+    </style>
+    <style>
       .myDiv {
       background-color: lightblue;
       text-align: center;
@@ -204,11 +233,15 @@
   <input type=hidden name="retURL" value="">
   <div class="row">
     <div class="col-3 col-s-6">
-      <h1>Make the move to value-based healthcare with ease.</h1>
-      <h4>The shift from volume-based healthcare to value-based healthcare has brought the focus back on patient care. But healthcare providers (HCPs) 
-        still face an uphill task in creating value for diverse patient demographics at speed and scale.</h4>
-        <h4>We plug in intelligent insights and automation at various links of the value chain to help build 360⁰ patient profiles,
-           democratize access, enhance operational efficiency and improve all-round patient outcomes.</h4>
+      <h1>Sanita</h1>
+      <h4>
+      <ul>
+        <li>Health Cloud Asset Feature is developed by IVL can be used for Non-Profit Organisation 
+          (Any Organisation who can support financial to the Needy ones) Government , Charity hospitals.</li>
+        <li> It helps to manage through a patient profile that integrates information from multiple data sources, including  (EMRs) or (EHR).</li>
+        <li>It is cloud-based platform that supports information exchange and interoperability by creating a real-time view of critical patient health data.</li>
+        </ul>
+      </h4>
       </div>
   <!--  ----------------------------------------------------------------------  -->
   <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
@@ -232,8 +265,8 @@
   
   <input type="hidden" id="external" name="external" value="1" /><br>
   
-  <input type="submit" name="register" label="Register" class="button" value="Register">
-  </fieldset>
+  <input type="submit" name="register" label="Register" class="button" value="Register" >
+  </fieldset>  
   </div>
   </div>
   </div>
